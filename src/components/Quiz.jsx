@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { asia } from "../mock-data/asia";
 
+import CurrentQuestion from './CurrentQuestion';
+
 export default function Quiz() {
   const [index, setIndex] = useState(0);
   const [answers, setAnswers] = useState(null);
