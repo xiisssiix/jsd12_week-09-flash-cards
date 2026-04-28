@@ -6,6 +6,8 @@ import Answer from "../components/Answer";
 export default function Quiz() {
   const [index, setIndex] = useState(0);
   const [answers, setAnswers] = useState(null);
+  const [score, setScore] = useState(0);
+  const [selected, setSelected] = useState(null);
   const item = asia[index];
 
   const handleAnswer = (value) => {
@@ -13,6 +15,11 @@ export default function Quiz() {
     setSelected(true);
     if (value) setScore(score + 1);
   };
+  
+  const handleSelected = () => {
+    setSelected(false);
+    setIndex(index + 1);
+  }
 
   return (
     <div className="flex flex-col gap-5 p-5 rounded-2xl bg-white">
@@ -23,6 +30,7 @@ export default function Quiz() {
         <button className="cursor-pointer flex-1 text-white px-5 py-2 rounded bg-slate-400 hover:bg-sky-700" onClick={() => handleAnswer(false)}>{item.wrongOption}</button>
       </div>
       <CurrentQuestion current={index} total={asia.length} />
+      {selected && <Answer current={index} selected={selected} answers={answers} handleSelected={handleSelected} />}
     </div>
   );
 }
