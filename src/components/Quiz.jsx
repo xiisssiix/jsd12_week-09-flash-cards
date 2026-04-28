@@ -8,7 +8,11 @@ export default function Quiz() {
   const [answers, setAnswers] = useState(null);
   const item = asia[index];
 
-  const handleAnswer = (value) => setAnswers(value);
+  const handleAnswer = (value) => {
+    setAnswers(value);
+    setSelected(true);
+    if (value) setScore(score + 1);
+  };
 
   return (
     <div className="flex flex-col gap-5 p-5 rounded-2xl bg-white">
