@@ -7,7 +7,7 @@ export default function Quiz() {
   const [index, setIndex] = useState(0);
   const [answers, setAnswers] = useState(null);
   const item = asia[index];
-
+  //
   const handleAnswer = (value) => {
     setAnswers(value);
   };
