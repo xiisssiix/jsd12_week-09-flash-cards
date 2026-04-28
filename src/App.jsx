@@ -1,6 +1,8 @@
+import Quiz from "./components/Quiz";
+
 export default function App() {
 
   return (
-    <main>App.jsx page</main>
+    <main><Quiz /></main>
   )
 };
